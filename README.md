@@ -1,2 +1,19 @@
-# Data-Structures-Project-1
-Solutions for Data Structures Project 1 in C++ (No STL):  Iftar Manager: Guest tracking with OOP Polynomial Ops: Dynamic memory handling Sorted List: Insertion, deletion, operator overloading Sorting System: Multiple sorting algorithms with visualization Stats: Mean, median, sum, min, max
+# Data Structures Assignment #1 - Cairo University
+
+## Overview  
+C++ solutions (No STL) for fundamental data structures concepts.
+
+## Problems Covered  
+- **Iftar Manager** – Guest tracking via OOP  
+- **Polynomial Ops** – Dynamic memory for polynomials  
+- **Sorted Linked List** – Insertion, deletion, operator overloading  
+- **Sorting System** – Multiple algorithms + Selection Sort (Palestinian cities)  
+- **Statistical Calculations** – Median, mean, sum, min, max  
+
+## Features  
+✔️ Efficient C++ implementation  
+✔️ No STL usage  
+✔️ Interactive menu-driven programs  
+✔️ Step-by-step sorting visualization  
+✔️ Test cases included  
+
