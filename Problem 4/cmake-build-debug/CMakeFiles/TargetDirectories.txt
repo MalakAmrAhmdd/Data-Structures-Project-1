@@ -1,0 +1,4 @@
+D:/FCAI - CU/Second Year/Second term/Data Structures & Algorithm/Assignment 1/cmake-build-debug/CMakeFiles/Assignment_1.dir
+D:/FCAI - CU/Second Year/Second term/Data Structures & Algorithm/Assignment 1/cmake-build-debug/CMakeFiles/SortingSystem.cpp.dir
+D:/FCAI - CU/Second Year/Second term/Data Structures & Algorithm/Assignment 1/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/FCAI - CU/Second Year/Second term/Data Structures & Algorithm/Assignment 1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
