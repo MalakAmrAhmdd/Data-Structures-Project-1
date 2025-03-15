@@ -1,4 +1,4 @@
-# Install script for directory: D:/FCAI - CU/Second Year/Second term/Data Structures & Algorithm/Assignment 1
+# Install script for directory: C:/Users/DELL/Documents/GitHub/Data-Structures-Project-1/Problem 4
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/FCAI - CU/Second Year/Second term/Data Structures & Algorithm/Assignment 1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/DELL/Documents/GitHub/Data-Structures-Project-1/Problem 4/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

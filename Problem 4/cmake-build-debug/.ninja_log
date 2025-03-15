@@ -1,0 +1,26 @@
+# ninja log v6
+11	3066	7637154616453832	CMakeFiles/Data-Structures-Project-1.dir/SortingSystem.cpp.obj	880d85aff1cef003
+5	5179	7637154616394288	CMakeFiles/Data-Structures-Project-1.dir/main.cpp.obj	9d7bd3e00550c68c
+5179	6674	7637154668132222	Data-Structures-Project-1.exe	9b9ffcb3b1e28a84
+10	4255	7637154855056789	CMakeFiles/Data-Structures-Project-1.dir/main.cpp.obj	9d7bd3e00550c68c
+4256	5773	7637154897513229	Data-Structures-Project-1.exe	9b9ffcb3b1e28a84
+15	4030	7637155089328504	CMakeFiles/Data-Structures-Project-1.dir/main.cpp.obj	9d7bd3e00550c68c
+20	3300	7637156595829971	CMakeFiles/Data-Structures-Project-1.dir/SortingSystem.cpp.obj	880d85aff1cef003
+15	5448	7637156595770131	CMakeFiles/Data-Structures-Project-1.dir/main.cpp.obj	9d7bd3e00550c68c
+5448	7068	7637156650098938	Data-Structures-Project-1.exe	9b9ffcb3b1e28a84
+16	2896	7637158117294582	CMakeFiles/Data-Structures-Project-1.dir/SortingSystem.cpp.obj	880d85aff1cef003
+11	4900	7637158117244702	CMakeFiles/Data-Structures-Project-1.dir/main.cpp.obj	9d7bd3e00550c68c
+4900	6468	7637158166129109	Data-Structures-Project-1.exe	9b9ffcb3b1e28a84
+18	3043	7637160843083397	CMakeFiles/Data-Structures-Project-1.dir/SortingSystem.cpp.obj	880d85aff1cef003
+12	5083	7637160843023575	CMakeFiles/Data-Structures-Project-1.dir/main.cpp.obj	9d7bd3e00550c68c
+5083	6675	7637160893730462	Data-Structures-Project-1.exe	9b9ffcb3b1e28a84
+15	2874	7637161302501234	CMakeFiles/Data-Structures-Project-1.dir/SortingSystem.cpp.obj	880d85aff1cef003
+10	4902	7637161302461335	CMakeFiles/Data-Structures-Project-1.dir/main.cpp.obj	9d7bd3e00550c68c
+4902	6524	7637161351373808	Data-Structures-Project-1.exe	9b9ffcb3b1e28a84
+17	3066	7637161840299981	CMakeFiles/Data-Structures-Project-1.dir/SortingSystem.cpp.obj	880d85aff1cef003
+12	5394	7637161840250108	CMakeFiles/Data-Structures-Project-1.dir/main.cpp.obj	9d7bd3e00550c68c
+5394	7028	7637161894079150	Data-Structures-Project-1.exe	9b9ffcb3b1e28a84
+12	4349	7637164047051876	CMakeFiles/Data-Structures-Project-1.dir/main.cpp.obj	9d7bd3e00550c68c
+4350	5954	7637164090425828	Data-Structures-Project-1.exe	9b9ffcb3b1e28a84
+12	4233	7637164709248926	CMakeFiles/Data-Structures-Project-1.dir/main.cpp.obj	9d7bd3e00550c68c
+4234	5823	7637164751456006	Data-Structures-Project-1.exe	9b9ffcb3b1e28a84

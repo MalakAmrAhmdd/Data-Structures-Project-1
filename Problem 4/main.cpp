@@ -19,27 +19,36 @@ void menu(T arr[], int size) {
 }
 
 int main(){
-    cout << "Enter Number of items to sort:";
-    int m; cin >> m;
-    cout << '\n';
-    string type[m];
-    for (auto i = 0; i < m; i++) {
-        cout << "Enter data " << i+1 << ":";
-        cin >> type[i];
-    }
+    while (true){
+        cout << "Enter Number of items to sort:";
+        int m; cin >> m;
+        cout << '\n';
+        string type[m];
+        for (auto i = 0; i < m; i++) {
+            cout << "Enter data " << i+1 << ":";
+            cin >> type[i];
+        }
 
-    if (isInteger(type[0])) {
-        int arr[m];
-        for (int i = 0; i < m; i++) {
-            arr[i] = stoi(type[i]);
+        if (isInteger(type[0])) {
+            int arr[m];
+            for (int i = 0; i < m; i++) {
+                arr[i] = stoi(type[i]);
+            }
+            menu<int>(arr,m);
+        }else if (isFloat(type[0])) {
+            double arr[m];
+            for (int i = 0; i < m; i++) {
+                arr[i] = stod(type[i]);
+            }
+            menu<double>(arr,m);
+        }else
+            menu<string>(type,m);
+        cout << "Do you want to sort another dataset? (y/n):";
+        char repeat;
+        cin >> repeat;
+        if(repeat == 'n') {
+            cout << "Thank you for using the sorting system! Goodbye!";
+            break;
         }
-        menu<int>(arr,m);
-    }else if (isFloat(type[0])) {
-        double arr[m];
-        for (int i = 0; i < m; i++) {
-            arr[i] = stod(type[i]);
-        }
-        menu<double>(arr,m);
-    }else
-        menu<string>(type,m);
+    }
 }
