@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Assignment_1",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Data-Structures-Project-1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Data-Structures-Project-1-Debug-84f64bbfb42333ac602f.json",
+					"name" : "Data-Structures-Project-1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SortingSystem.cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SortingSystem.cpp-Debug-41869a1a78e27bd34ea3.json",
+					"name" : "SortingSystem.cpp",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/DR Beshir/Data-Structures-Project-1/Problem 4/cmake-build-debug",
+		"source" : "C:/DR Beshir/Data-Structures-Project-1/Problem 4"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
