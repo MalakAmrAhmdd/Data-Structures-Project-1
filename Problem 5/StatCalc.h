@@ -1,6 +1,6 @@
 
-#ifndef ASSIGNMENT_1_STATCALC_H
-#define ASSIGNMENT_1_STATCALC_H
+#ifndef STATCALC_H
+#define STATCALC_H
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -28,4 +28,4 @@ public:
 };
 
 
-#endif //ASSIGNMENT_1_STATCALC_H
+#endif STATCALC_H

@@ -11,8 +11,5 @@ int main() {
     StatCalc<int> statCalc(size);
     statCalc.inputData();
     statCalc.statisticMenu();
-
-
-
     return 0;
 }

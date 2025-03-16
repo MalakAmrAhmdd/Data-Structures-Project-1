@@ -2,7 +2,6 @@
 using namespace std;
 #include "StatCalc.h"
 
-
 template <typename T>
 StatCalc<T>::StatCalc(int size) {
     this->size = size;
@@ -10,39 +9,39 @@ StatCalc<T>::StatCalc(int size) {
 }
 
 template <typename T>
-StatCalc<T>::~StatCalc(){
+StatCalc<T>::~StatCalc() {
     delete[] data;
 }
 
 template <typename T>
-void StatCalc<T>::sort(int arr[] , int l , int m , int r) {
-    int i = 0 , j = 0 , k = l;
+void StatCalc<T>::sort(int arr[], int l, int m, int r) {
+    int i = 0, j = 0, k = l;
     int n1 = m - l + 1;
     int n2 = r - m;
     int arrL[n1];
     int arrR[n2];
-    for (int n = 0; n <n1 ; ++n) {
+    for (int n = 0; n < n1; ++n) {
         arrL[n] = arr[n + l];
     }
-    for (int n = 0; n <n2 ; ++n) {
+    for (int n = 0; n < n2; ++n) {
         arrR[n] = arr[n + m + 1];
     }
-    while(i<n1 && j < n2){
-        if(arrL[i] < arrR[j]){
+    while (i < n1 && j < n2) {
+        if (arrL[i] < arrR[j]) {
             arr[k] = arrL[i];
             i++;
-        }else{
+        } else {
             arr[k] = arrR[j];
             j++;
         }
         k++;
     }
-    while(i < n1){
+    while (i < n1) {
         arr[k] = arrL[i];
         i++;
         k++;
     }
-    while(j<n2){
+    while (j < n2) {
         arr[k] = arrR[j];
         j++;
         k++;
@@ -50,34 +49,38 @@ void StatCalc<T>::sort(int arr[] , int l , int m , int r) {
 }
 
 template <typename T>
-void StatCalc<T>::mergesort(int arr[], int l , int r) {
-    int m = (l+r)/2;
-    mergesort(arr,l,m);
-    mergesort(arr,m+1,r);
-    sort(arr,l,m,r);
+void StatCalc<T>::mergesort(int arr[], int l, int r) {
+    if (l < r) {
+        int m = (l + r) / 2;
+        mergesort(arr, l, m);
+        mergesort(arr, m + 1, r);
+        sort(arr, l, m, r);
+    }
 }
 
 template <typename T>
 T StatCalc<T>::findMedian() {
-    mergesort(data,0,size - 1);
-    if(size % 2 == 0) {
+    mergesort(data, 0, size - 1);
+    if (size % 2 == 0) {
         return (data[size / 2 - 1] + data[size / 2]) / 2;
-    }else{
-        return data[size/2];
+    } else {
+        return data[size / 2];
     }
-
 }
-template<typename T>
+
+template <typename T>
 T StatCalc<T>::findMin() {
     mergesort(data, 0, size - 1);
     return data[0];
 }
-template<typename T>
+
+template <typename T>
 T StatCalc<T>::findMax() {
     mergesort(data, 0, size - 1);
     return data[size - 1];
 }
-template<typename T>
+
+template <typename T>
 double StatCalc<T>::findMean() {
     double sum = 0;
     for (int i = 0; i < size; ++i) {
@@ -85,7 +88,8 @@ double StatCalc<T>::findMean() {
     }
     return sum / size;
 }
-template<typename T>
+
+template <typename T>
 T StatCalc<T>::findSummation() {
     T sum = 0;
     for (int i = 0; i < size; ++i) {
@@ -93,21 +97,24 @@ T StatCalc<T>::findSummation() {
     }
     return sum;
 }
-template<typename T>
+
+template <typename T>
 void StatCalc<T>::displayArray() {
     for (int i = 0; i < size; ++i) {
         cout << data[i] << " ";
     }
     cout << endl;
 }
-template<typename T>
+
+template <typename T>
 void StatCalc<T>::inputData() {
     for (int i = 0; i < size; ++i) {
         cout << "Enter data[" << i << "] : ";
         cin >> data[i];
     }
 }
-template<typename T>
+
+template <typename T>
 void StatCalc<T>::statisticMenu() {
     int choice;
     do {
@@ -147,3 +154,6 @@ void StatCalc<T>::statisticMenu() {
         }
     } while (choice != 7);
 }
+
+// Explicit instantiation of the template
+template class StatCalc<int>;

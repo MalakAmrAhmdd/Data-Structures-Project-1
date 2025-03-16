@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.30)
-project(Problem_5)
+cmake_minimum_required(VERSION 3.28)
+project(Assignment_1)
 
-set(CMAKE_CXX_STANDARD 26)
+set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Problem_5 main.cpp)
+add_executable(Problem5 main.cpp StatCalc.cpp)

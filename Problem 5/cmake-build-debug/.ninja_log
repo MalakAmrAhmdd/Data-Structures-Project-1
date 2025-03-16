@@ -1,4 +1,12 @@
-# ninja log v6
-7	518	7637827809136431	CMakeFiles/Problem_5.dir/main.cpp.obj	5a57d222152e695a
-521	652	7637827814280128	Problem_5.exe	fe459e193f914e92
-5	1865	7637828594081280	CMakeFiles/Problem_5.dir/main.cpp.obj	5a57d222152e695a
+# ninja log v5
+10	1160	7637875598911088	CMakeFiles/StatCalc.cpp.dir/StatCalc.cpp.obj	ab37e6d1b4a00565
+5	1130	7637876172298986	CMakeFiles/Data-Structures-Project-1.dir/StatCalc.cpp.obj	1ba50a9ed4fa6404
+2	1132	7637876172310517	CMakeFiles/Data-Structures-Project-1.dir/main.cpp.obj	19113e51a66a6c7f
+7	1126	7637876733619495	CMakeFiles/Problem5.dir/StatCalc.cpp.obj	15667094cd8aabd3
+3	1130	7637876733665325	CMakeFiles/Problem5.dir/main.cpp.obj	f249c4f1f35fe5e3
+12	1197	7637877410647900	CMakeFiles/Problem5.dir/main.cpp.obj	f249c4f1f35fe5e3
+16	1203	7637877410716767	CMakeFiles/Problem5.dir/StatCalc.cpp.obj	15667094cd8aabd3
+23	1357	7637877859227370	CMakeFiles/Problem5.dir/StatCalc.cpp.obj	15667094cd8aabd3
+17	1398	7637877859639303	CMakeFiles/Problem5.dir/main.cpp.obj	f249c4f1f35fe5e3
+7	1155	7637878885751308	CMakeFiles/Problem5.dir/StatCalc.cpp.obj	15667094cd8aabd3
+1156	1236	7637878886514783	Problem5.exe	532cc4df61edb888

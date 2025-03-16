@@ -3,6 +3,6 @@ project(Assignment_1)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Data-Structures-Project-1 main.cpp
+add_executable(Problem4 main.cpp
         SortingSystem.cpp)
 add_executable(SortingSystem.cpp SortingSystem.cpp)
