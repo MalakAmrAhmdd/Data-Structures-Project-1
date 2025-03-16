@@ -116,17 +116,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Data-Structures-Project-1
+# Target rules for targets named Problem4
 
 # Build rule for target.
-Data-Structures-Project-1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Data-Structures-Project-1
-.PHONY : Data-Structures-Project-1
+Problem4: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Problem4
+.PHONY : Problem4
 
 # fast build rule for target.
-Data-Structures-Project-1/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Data-Structures-Project-1.dir\build.make CMakeFiles/Data-Structures-Project-1.dir/build
-.PHONY : Data-Structures-Project-1/fast
+Problem4/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Problem4.dir\build.make CMakeFiles/Problem4.dir/build
+.PHONY : Problem4/fast
 
 #=============================================================================
 # Target rules for targets named SortingSystem.cpp
@@ -146,7 +146,7 @@ SortingSystem.obj: SortingSystem.cpp.obj
 
 # target to build an object file
 SortingSystem.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Data-Structures-Project-1.dir\build.make CMakeFiles/Data-Structures-Project-1.dir/SortingSystem.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Problem4.dir\build.make CMakeFiles/Problem4.dir/SortingSystem.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SortingSystem.cpp.dir\build.make CMakeFiles/SortingSystem.cpp.dir/SortingSystem.cpp.obj
 .PHONY : SortingSystem.cpp.obj
 
@@ -155,7 +155,7 @@ SortingSystem.i: SortingSystem.cpp.i
 
 # target to preprocess a source file
 SortingSystem.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Data-Structures-Project-1.dir\build.make CMakeFiles/Data-Structures-Project-1.dir/SortingSystem.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Problem4.dir\build.make CMakeFiles/Problem4.dir/SortingSystem.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SortingSystem.cpp.dir\build.make CMakeFiles/SortingSystem.cpp.dir/SortingSystem.cpp.i
 .PHONY : SortingSystem.cpp.i
 
@@ -164,7 +164,7 @@ SortingSystem.s: SortingSystem.cpp.s
 
 # target to generate assembly for a file
 SortingSystem.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Data-Structures-Project-1.dir\build.make CMakeFiles/Data-Structures-Project-1.dir/SortingSystem.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Problem4.dir\build.make CMakeFiles/Problem4.dir/SortingSystem.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SortingSystem.cpp.dir\build.make CMakeFiles/SortingSystem.cpp.dir/SortingSystem.cpp.s
 .PHONY : SortingSystem.cpp.s
 
@@ -173,7 +173,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Data-Structures-Project-1.dir\build.make CMakeFiles/Data-Structures-Project-1.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Problem4.dir\build.make CMakeFiles/Problem4.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -181,7 +181,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Data-Structures-Project-1.dir\build.make CMakeFiles/Data-Structures-Project-1.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Problem4.dir\build.make CMakeFiles/Problem4.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -189,7 +189,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Data-Structures-Project-1.dir\build.make CMakeFiles/Data-Structures-Project-1.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Problem4.dir\build.make CMakeFiles/Problem4.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -200,7 +200,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... Data-Structures-Project-1
+	@echo ... Problem4
 	@echo ... SortingSystem.cpp
 	@echo ... SortingSystem.obj
 	@echo ... SortingSystem.i

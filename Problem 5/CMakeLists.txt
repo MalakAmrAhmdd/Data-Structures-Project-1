@@ -4,3 +4,4 @@ project(Assignment_1)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Problem5 main.cpp StatCalc.cpp)
+add_executable(StatCalc.cpp StatCalc.cpp)

@@ -103,14 +103,14 @@ void StatCalc<T>::displayArray() {
     for (int i = 0; i < size; ++i) {
         cout << data[i] << " ";
     }
-    cout << endl;
+    cout <<"Data: " <<endl;
 }
 
 template <typename T>
 void StatCalc<T>::inputData() {
-    for (int i = 0; i < size; ++i) {
-        cout << "Enter data[" << i << "] : ";
-        cin >> data[i];
+    for (int i = 1; i <= size; ++i) {
+        cout << "Enter element " << i <<": ";
+        cin >> data[i-1];
     }
 }
 
