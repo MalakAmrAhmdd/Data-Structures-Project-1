@@ -21,13 +21,14 @@ public:
     void merge(int left, int mid, int right);
     void mergeSort(int left, int right);
     void mergeSortHelper();
-    void quickSort();
+    void quickSort(int left, int right);
     void countSort();
     void radixSort();
     void bucketSort();
 
 
     int partition(int low, int high);
+    void quickSortHelper();
 
     void displayData();
 
@@ -127,8 +128,6 @@ void SortingSystem<T>::merge(int left , int middle , int right){
         data[k] = arrR[j];
         k++;j++;
     }
-
-
 }
 
 template <typename T>
@@ -149,6 +148,49 @@ void SortingSystem<T>::mergeSort(int left, int right){
 template <typename T>
 void SortingSystem<T>::mergeSortHelper(){
     mergeSort(0,size-1);
+    cout << "\nSorted Data: "; displayData();
+    cout<<"\n";
+}
+
+template<typename T>
+int SortingSystem<T>::partition(int low, int high) {
+    T pivot = data[low];
+    static int itera = 0;
+    int i = low;
+    for (int j = low + 1; j <= high ; j++) {
+        if(data[j] < pivot){
+            i++;
+            swap(data[i], data[j]);
+        }
+    }
+    swap(data[i],data[low]);
+    cout << "Pivot: " << pivot << " -> [";
+    for (int k = low; k < i; k++) {
+        cout << data[k];
+        if (k < i - 1) cout << ", ";
+    }
+    cout << "] " << pivot << " [";
+    for (int k = i + 1; k <= high; k++) {
+        cout << data[k];
+        if (k < high) cout << ", ";
+    }
+    cout << "]\n";
+    return i;
+}
+template<typename T>
+void SortingSystem<T>::quickSort(int left, int right) {
+
+    //static int i = 0;
+    if(left >= right) return;
+    int piv = partition(left,right);
+    quickSort(left,piv-1);
+    quickSort(piv+1,right);
+
+
+}
+template <typename T>
+void SortingSystem<T>::quickSortHelper() {
+    quickSort(0,size-1);
     cout << "\nSorted Data: "; displayData();
     cout<<"\n";
 }
@@ -225,13 +267,13 @@ void SortingSystem<T>::showMenu() {
             measureSortTime(&SortingSystem<T>::mergeSortHelper);
             cout << '\n';
             break;
-            // case 6:
-            //     cout << "Sorting using Quick Sort...\n";
-            //     cout << "Initial Data: "; displayData();
-            //     cout << '\n';
-            //     measureSortTime(&SortingSystem<T>::quickSort);
-            //     cout << '\n';
-            //     break;
+             case 6:
+                 cout << "Sorting using Quick Sort...\n";
+                 cout << "Initial Data: "; displayData();
+                 cout << '\n';
+                 measureSortTime(&SortingSystem<T>::quickSortHelper);
+                 cout << '\n';
+                 break;
             // case 7:
             //     cout << "Sorting using Count Sort...\n";
             //     cout << "Initial Data: "; displayData();
