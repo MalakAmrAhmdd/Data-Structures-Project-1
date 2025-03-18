@@ -9,6 +9,7 @@ bool isInteger(const string& str) {
 bool isFloat(const string& str) {
     return regex_match(str, regex("[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?"));
 }
+
 template<typename T>
 void menu(T arr[], int size) {
     SortingSystem<T> list(size);
@@ -28,7 +29,6 @@ int main(){
             cout << "Enter data " << i+1 << ":";
             cin >> type[i];
         }
-
         if (isInteger(type[0])) {
             int arr[m];
             for (int i = 0; i < m; i++) {
