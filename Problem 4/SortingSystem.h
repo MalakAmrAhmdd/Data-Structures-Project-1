@@ -215,7 +215,39 @@ void SortingSystem<T>::measureSortTime(void(SortingSystem::*sortFunc)()) {
     cout << "\nSorting Time: " << fixed << setprecision(6) << time.count() << " seconds\n";
 }
 
+template<typename T>
+void SortingSystem<T>::bucketSort() {
+    if (size <= 0) return;
 
+
+    T maxValue = data[0];
+    for (int i = 1; i < size; i++) {
+        if (data[i] > maxValue) {
+            maxValue = data[i];
+        }
+    }
+
+    
+    int bucketCount = size;
+    vector<vector<T>> buckets(bucketCount);
+
+   
+    for (int i = 0; i < size; i++) {
+        int bucketIndex = (data[i] * bucketCount) / (maxValue + 1);
+        buckets[bucketIndex].push_back(data[i]);
+    }
+
+  
+    int index = 0;
+    for (int i = 0; i < bucketCount; i++) {
+        sort(buckets[i].begin(), buckets[i].end());
+        for (int j = 0; j < buckets[i].size(); j++) {
+            data[index++] = buckets[i][j];
+        }
+    }
+
+    cout << "\nSorted Data: "; displayData();
+}
 
 template<typename T>
 void SortingSystem<T>::showMenu() {
@@ -288,13 +320,13 @@ void SortingSystem<T>::showMenu() {
             //     measureSortTime(&SortingSystem<T>::radixSort);
             //     cout << '\n';
             //     break;
-            // case 9:
-            //     cout << "Sorting using Bucket Sort...\n";
-            //     cout << "Initial Data: "; displayData();
-            //     cout << '\n';
-            //     measureSortTime(&SortingSystem<T>::bucketSort);
-            //     cout << '\n';
-            //     break;
+               case 9:
+                    cout << "Sorting using Bucket Sort...\n";
+                    cout << "Initial Data: "; displayData();
+                    cout << '\n';
+                    measureSortTime(&SortingSystem<T>::bucketSort);
+                    cout << '\n';
+                    break;
         default:
             break;
     }
