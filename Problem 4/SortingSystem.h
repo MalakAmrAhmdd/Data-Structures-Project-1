@@ -24,6 +24,7 @@ public:
     void quickSort(int left, int right);
     void countSort();
     void radixSort();
+    void countSortForRadix(int exp);
     void bucketSort();
 
 
@@ -216,9 +217,57 @@ void SortingSystem<T>::measureSortTime(void(SortingSystem::*sortFunc)()) {
 }
 
 template<typename T>
-void SortingSystem<T>::bucketSort() {
+void SortingSystem<T>::countSortForRadix(int exp) {
+    T* output = new T[size];
+    int count[10] = {0};
+
+    for (int i = 0; i < size; i++) {
+        count[(data[i] / exp) % 10]++;
+    }
+
+    for (int i = 1; i < 10; i++) {
+        count[i] += count[i - 1];
+    }
+
+
+    for (int i = size - 1; i >= 0; i--) {
+        int digit = (data[i] / exp) % 10;
+        output[count[digit] - 1] = data[i];
+        count[digit]--;
+    }
+
+    for (int i = 0; i < size; i++) {
+        data[i] = output[i];
+    }
+
+    delete[] output;
+}
+
+template<typename T>
+void SortingSystem<T>::radixSort() {
+    static_assert(is_integral<T>::value, "Radix sort can only be used for integer types");
+
     if (size <= 0) return;
 
+    T maxValue = *max_element(data, data + size);
+
+    for (int exp = 1; maxValue / exp > 0; exp *= 10) {
+        cout << "Sorting by place value: " << exp << endl;
+        countSortForRadix(exp);
+        cout << "After sorting with exp = " << exp << ": ";
+        displayData();
+        cout << '\n';
+    }
+
+    cout << "\nFinal Sorted Data: ";
+    displayData();
+}
+
+
+
+template<typename T>
+void SortingSystem<T>::bucketSort() {
+    if (size <= 0) return;
 
     T maxValue = data[0];
     for (int i = 1; i < size; i++) {
@@ -227,17 +276,19 @@ void SortingSystem<T>::bucketSort() {
         }
     }
 
-    
     int bucketCount = size;
     vector<vector<T>> buckets(bucketCount);
 
-   
     for (int i = 0; i < size; i++) {
-        int bucketIndex = (data[i] * bucketCount) / (maxValue + 1);
+        int bucketIndex;
+        if constexpr (is_same<T, string>::value) {
+            bucketIndex = (data[i].length() * bucketCount) / (maxValue.length() + 1);
+        } else {
+            bucketIndex = (data[i] * bucketCount) / (maxValue + 1);
+        }
         buckets[bucketIndex].push_back(data[i]);
     }
 
-  
     int index = 0;
     for (int i = 0; i < bucketCount; i++) {
         sort(buckets[i].begin(), buckets[i].end());
@@ -299,13 +350,13 @@ void SortingSystem<T>::showMenu() {
             measureSortTime(&SortingSystem<T>::mergeSortHelper);
             cout << '\n';
             break;
-             case 6:
-                 cout << "Sorting using Quick Sort...\n";
-                 cout << "Initial Data: "; displayData();
-                 cout << '\n';
-                 measureSortTime(&SortingSystem<T>::quickSortHelper);
-                 cout << '\n';
-                 break;
+         case 6:
+             cout << "Sorting using Quick Sort...\n";
+             cout << "Initial Data: "; displayData();
+             cout << '\n';
+             measureSortTime(&SortingSystem<T>::quickSortHelper);
+             cout << '\n';
+             break;
             // case 7:
             //     cout << "Sorting using Count Sort...\n";
             //     cout << "Initial Data: "; displayData();
@@ -313,20 +364,20 @@ void SortingSystem<T>::showMenu() {
             //     measureSortTime(&SortingSystem<T>::countSort);
             //     cout << '\n';
             //     break;
-            // case 8:
-            //     cout << "Sorting using Radix Sort...\n";
-            //     cout << "Initial Data: "; displayData();
-            //     cout << '\n';
-            //     measureSortTime(&SortingSystem<T>::radixSort);
-            //     cout << '\n';
-            //     break;
-               case 9:
-                    cout << "Sorting using Bucket Sort...\n";
-                    cout << "Initial Data: "; displayData();
-                    cout << '\n';
-                    measureSortTime(&SortingSystem<T>::bucketSort);
-                    cout << '\n';
-                    break;
+        case 8:
+            cout << "Sorting using Radix Sort...\n";
+            cout << "Initial Data: "; displayData();
+            cout << '\n';
+            measureSortTime(&SortingSystem<T>::radixSort);
+            cout << '\n';
+            break;
+           case 9:
+                cout << "Sorting using Bucket Sort...\n";
+                cout << "Initial Data: "; displayData();
+                cout << '\n';
+                measureSortTime(&SortingSystem<T>::bucketSort);
+                cout << '\n';
+                break;
         default:
             break;
     }
