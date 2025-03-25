@@ -277,7 +277,11 @@ void SortingSystem<T>::bucketSort() {
     }
 
     int bucketCount = size;
-    vector<vector<T>> buckets(bucketCount);
+    T** buckets = new T*[bucketCount];
+    int* bucketSizes = new int[bucketCount]();
+    for (int i = 0; i < bucketCount; i++) {
+        buckets[i] = new T[size];
+    }
 
     for (int i = 0; i < size; i++) {
         int bucketIndex;
@@ -286,16 +290,30 @@ void SortingSystem<T>::bucketSort() {
         } else {
             bucketIndex = (data[i] * bucketCount) / (maxValue + 1);
         }
-        buckets[bucketIndex].push_back(data[i]);
+        buckets[bucketIndex][bucketSizes[bucketIndex]++] = data[i];
+    }
+
+    for (int i = 0; i < bucketCount; i++) {
+        for (int j = 0; j < bucketSizes[i] - 1; j++) {
+            for (int k = 0; k < bucketSizes[i] - j - 1; k++) {
+                if (buckets[i][k] > buckets[i][k + 1]) {
+                    T temp = buckets[i][k];
+                    buckets[i][k] = buckets[i][k + 1];
+                    buckets[i][k + 1] = temp;
+                }
+            }
+        }
     }
 
     int index = 0;
     for (int i = 0; i < bucketCount; i++) {
-        sort(buckets[i].begin(), buckets[i].end());
-        for (int j = 0; j < buckets[i].size(); j++) {
+        for (int j = 0; j < bucketSizes[i]; j++) {
             data[index++] = buckets[i][j];
         }
+        delete[] buckets[i];
     }
+    delete[] buckets;
+    delete[] bucketSizes;
 
     cout << "\nSorted Data: "; displayData();
 }
