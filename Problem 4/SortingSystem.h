@@ -101,8 +101,30 @@ void SortingSystem<T>::bubblesort() {
     cout << "\nSorted Data: "; displayData();
 }
 
-//template <typename T>
-//void ShellSort(){}
+template <typename T>
+void SortingSystem<T>::shellSort() {
+    int gap = size / 2 , i , j;
+    T key;
+    static int it = 1;
+    while (gap > 0){
+        i = gap;
+        while(i<size){
+            key = data[i];
+            j = i - gap;
+            while(j>=0 && data[j] > key){
+                data[j+gap] = data[j];
+                j-=gap;
+                cout << "Iteration " << it++ << ": "; displayData();
+                cout << '\n';
+            }
+            data[j+gap] = key;
+            i++;
+        }
+        gap/=2;
+
+    }
+    cout << "\nSorted Data: "; displayData();
+}
 
 template <typename T>
 void SortingSystem<T>::merge(int left , int middle , int right){
@@ -354,13 +376,13 @@ void SortingSystem<T>::showMenu() {
             measureSortTime(&SortingSystem<T>::bubblesort);
             cout << '\n';
             break;
-            // case 4:
-            //     cout << "Sorting using Shell Sort...\n";
-            //     cout << "Initial Data: "; displayData();
-            //     cout << '\n';
-            //     measureSortTime(&SortingSystem<T>::shellSort);
-            //     cout << '\n';
-            //     break;
+             case 4:
+                 cout << "Sorting using Shell Sort...\n";
+                 cout << "Initial Data: "; displayData();
+                 cout << '\n';
+                 measureSortTime(&SortingSystem<T>::shellSort);
+                 cout << '\n';
+                 break;
         case 5:
             cout << "Sorting using Merge Sort...\n";
             cout << "Initial Data: "; displayData();
