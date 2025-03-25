@@ -19,7 +19,7 @@ int main() {
     manager.display_all_guests();
 // Update invitation date for Omar
     manager.update_guest_invitation("Omar", "2025-03-15");
-    Guest guest4 = Guest("Abdelrahman", "abdelrahmanyr05@gmail.com", "2024-03-25");
+    Guest guest4 = Guest("Abdelrahman", "20230220@stud.fci-cu.edu.eg", "2024-03-25");
     manager.add_guest(guest4);
 // Display updated guest lis
     cout << endl;

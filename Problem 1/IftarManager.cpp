@@ -41,35 +41,59 @@ void IftarManager::update_guest_invitation(string name, string new_date) {
 }
 
 
-void IftarManager::send_email(string name, string contact, string date) {
+// Callback function to capture the response
+static size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* s) {
+    size_t newLength = size * nmemb;
+    try {
+        s->append((char*)contents, newLength);
+    } catch (std::bad_alloc& e) {
+        // Handle memory allocation exceptions
+        return 0;
+    }
+    return newLength;
+}
+
+void IftarManager::send_email(std::string name, std::string contact, std::string date) {
     CURL *curl;
     CURLcode res;
+    long http_code = 0;
 
     curl = curl_easy_init();
     if(curl) {
-        struct curl_slist *recipients = NULL;
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
         curl_easy_setopt(curl, CURLOPT_URL, "https://api.mailjet.com/v3.1/send");
-        curl_easy_setopt(curl, CURLOPT_USERNAME, "9385dd8f2e046880bd11631303c00151");
-        curl_easy_setopt(curl, CURLOPT_PASSWORD, "bfb13a2ecbb2434fbe296374fb43d42b");
+        curl_easy_setopt(curl, CURLOPT_USERNAME, API_KEY.c_str());
+        curl_easy_setopt(curl, CURLOPT_PASSWORD, API_SECRET.c_str());
         curl_easy_setopt(curl, CURLOPT_POST, 1L);
 
         string data_ = "{\"Messages\":[{\"From\":{\"Email\":\"fatimaiftards@gmail.com\",\"Name\":\"Fatima\"},\"To\":[{\"Email\":\"" + contact + "\",\"Name\":\"" + name + "\"}],\"Subject\":\"Reminder for your iftar at Fatima's.\",\"TextPart\":\"Iftar Gathering\",\"HTMLPart\":\"<h3>This is a reminder that your iftar is on " + date + "</h3><br />I hope you will be able to make it!\"}]}";
         const char* data = data_.c_str();
 
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, recipients);
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
 
         // Capture the response
-        std::string response_string;
+        string response_string;
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response_string);
 
         res = curl_easy_perform(curl);
         if(res != CURLE_OK) {
             fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
         } else {
-            // Print the response
-            std::cout << "Response from Mailjet: " << response_string << std::endl;
+            curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
+            if (http_code == 200) {
+                std::cout << "Email sent successfully to: " << contact << std::endl;
+            } else {
+                std::cout << "Failed to send email. HTTP response code: " << http_code << std::endl;
+                std::cout << "Response from Mailjet: " << response_string << std::endl;
+            }
         }
+
+        // Clean up
+        curl_slist_free_all(headers);
         curl_easy_cleanup(curl);
     }
 }
