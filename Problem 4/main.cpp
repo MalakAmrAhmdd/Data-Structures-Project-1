@@ -40,9 +40,9 @@ int main(){
             for (int i = 0; i < m; i++) {
                 arr[i] = stod(type[i]);
             }
-            menu<double>(arr,m);
+//            menu<double>(arr,m);
         }else
-            menu<string>(type,m);
+//            menu<string>(type,m);
         cout << "Do you want to sort another dataset? (y/n):";
         char repeat;
         cin >> repeat;
