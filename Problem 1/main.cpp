@@ -30,12 +30,43 @@ int main() {
 
 
 // Send reminders
-    cout << "Reminders: " << endl;
-    manager.send_reminder("2024-02-25");
+    cout << "\nReminders: " << endl;
+    manager.send_reminder("2025-03-15");
 
 
-    // -- Test cases --
+// -- Test cases --
+    cout << "\n -- Test Cases\n";
+    // Actual mail for testing mails
     Guest guest4 = Guest("Abdelrahman", "20230220@stud.fci-cu.edu.eg", "2024-02-25");
-    manager.sort_guest_list();  // Sorting is based on
+    Guest guest5 = Guest("Maged", "maged@example.com", "2025-05-00");
+    Guest guest6 = Guest("Sarah", "sarsor@example.com", "2025-01-12");
+    Guest guest7 = Guest("Shady", "shadyy@example.com", "2022-02-17");
+    Guest guest8 = Guest("Akram", "akrom@example.com", "2025-04-01");
+    Guest guest9 = Guest("Lamis", "lam@mail.com", "2025-06-01");
+
+    manager.add_guest(guest4);
+    manager.add_guest(guest5);
+    manager.add_guest(guest6);
+    manager.add_guest(guest7);
+    manager.add_guest(guest8);
+    manager.add_guest(guest9);
+
+    cout << "\nGuests (before removing):\n";
     manager.display_all_guests();
+
+    manager.remove_guest("Sarah");
+    manager.remove_guest("Shady");
+
+    cout << "\nGuests (after removing):\n";
+    manager.display_all_guests();
+
+    cout << "\nGuests (unsorted):\n";
+    manager.display_all_guests();
+
+    manager.sort_guest_list();
+    cout << "\nGuests (sorted):\n";
+    manager.display_all_guests();
+
+    cout << "\nMail Testing:\n";
+    manager.send_reminder("2024-02-25");
 }
