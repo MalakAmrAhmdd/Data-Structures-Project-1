@@ -35,14 +35,17 @@ int main(){
                 arr[i] = stoi(type[i]);
             }
             menu<int>(arr,m);
-        }else if (isFloat(type[0])) {
+            break;
+        }
+        if (isFloat(type[0])) {
             double arr[m];
             for (int i = 0; i < m; i++) {
                 arr[i] = stod(type[i]);
             }
-//            menu<double>(arr,m);
-        }else
-//            menu<string>(type,m);
+            //menu<double>(arr,m);
+            break;
+        }
+        //menu<string>(type,m);
         cout << "Do you want to sort another dataset? (y/n):";
         char repeat;
         cin >> repeat;

@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/DR Beshir/Data-Structures-Project-1/Problem 4/SortingSystem.cpp" "CMakeFiles/Problem4.dir/SortingSystem.cpp.obj" "gcc" "CMakeFiles/Problem4.dir/SortingSystem.cpp.obj.d"
-  "C:/DR Beshir/Data-Structures-Project-1/Problem 4/main.cpp" "CMakeFiles/Problem4.dir/main.cpp.obj" "gcc" "CMakeFiles/Problem4.dir/main.cpp.obj.d"
+  "C:/Users/DELL/Documents/GitHub/Data-Structures-Project-1/Problem 4/SortingSystem.cpp" "CMakeFiles/Problem4.dir/SortingSystem.cpp.obj" "gcc" "CMakeFiles/Problem4.dir/SortingSystem.cpp.obj.d"
+  "C:/Users/DELL/Documents/GitHub/Data-Structures-Project-1/Problem 4/main.cpp" "CMakeFiles/Problem4.dir/main.cpp.obj" "gcc" "CMakeFiles/Problem4.dir/main.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
