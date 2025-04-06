@@ -301,6 +301,7 @@ void SortingSystem<T>::measureSortTime(void(SortingSystem::*sortFunc)()) {
 
 template<typename T>
 void SortingSystem<T>::countSortForRadix(int exp) {
+    static_assert(std::is_integral<T>::value, "countSort can only be used with integer types.");
     T* output = new T[size];
     int count[10] = {0};
 
@@ -349,6 +350,8 @@ void SortingSystem<T>::radixSort() {
 
 template<typename T>
 void SortingSystem<T>::bucketSort() {
+    static_assert(std::is_arithmetic<T>::value, "bucketSort can only be used with numeric types.");
+
     if (size <= 0) return;
 
     T maxValue = data[0];
@@ -476,25 +479,41 @@ void SortingSystem<T>::showMenu() {
             cout << '\n';
             break;
         case 7:
-            cout << "Sorting using Count Sort...\n";
-            cout << "Initial Data: "; displayData();
-            cout << '\n';
-            measureSortTime(&SortingSystem<T>::countSort);
-            cout << '\n';
+            if constexpr (is_integral<T>::value) {
+                cout << "Sorting using Count Sort...\n";
+                cout << "Initial Data: "; displayData();
+                cout << '\n';
+                measureSortTime(&SortingSystem<T>::countSort);
+                cout << '\n';
+            }
+            else {
+                cout << "!! Count sort works only with integers";
+            }
             break;
         case 8:
-            cout << "Sorting using Radix Sort...\n";
-            cout << "Initial Data: "; displayData();
-            cout << '\n';
-            measureSortTime(&SortingSystem<T>::radixSort);
-            cout << '\n';
+            if constexpr (is_integral<T>::value) {
+                cout << "Sorting using Radix Sort...\n";
+                cout << "Initial Data: "; displayData();
+                cout << '\n';
+                measureSortTime(&SortingSystem<T>::radixSort);
+                cout << '\n';
+            }
+            else {
+                cout << "!! Radix sort works only with integers";
+            }
+
             break;
         case 9:
-            cout << "Sorting using Bucket Sort...\n";
-            cout << "Initial Data: "; displayData();
-            cout << '\n';
-            measureSortTime(&SortingSystem<T>::bucketSort);
-            cout << '\n';
+            if constexpr (is_integral<T>::value) {
+                cout << "Sorting using Bucket Sort...\n";
+                cout << "Initial Data: "; displayData();
+                cout << '\n';
+                measureSortTime(&SortingSystem<T>::bucketSort);
+                cout << '\n';
+            }
+            else {
+                cout << "!! Bucket sort works only with integers";
+            }
             break;
         default:
             break;
