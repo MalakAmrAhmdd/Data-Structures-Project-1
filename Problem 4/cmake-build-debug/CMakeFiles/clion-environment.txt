@@ -1,6 +1,11 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ToolSet: 11.0 w64 (local)@C:\Program Files\JetBrains\CLion 2024.1.4\bin\mingw
 Ninja: 1.12.0@C:\Program Files\JetBrains\CLion 2024.1.4\bin\ninja\win\x64\ninja.exe
+=======
+ToolSet: 12.0 w64 (local)@C:\msys64\mingw64
+Ninja: 1.11.1@C:\Program Files\JetBrains\CLion 2024.1.1\bin\ninja\win\x64\ninja.exe
+>>>>>>> Stashed changes
 =======
 ToolSet: 12.0 w64 (local)@C:\msys64\mingw64
 Ninja: 1.11.1@C:\Program Files\JetBrains\CLion 2024.1.1\bin\ninja\win\x64\ninja.exe

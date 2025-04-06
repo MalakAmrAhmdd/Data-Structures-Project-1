@@ -1,11 +1,17 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 C:/Users/DELL/Documents/GitHub/Data-Structures-Project-1/Problem 4/cmake-build-debug/CMakeFiles/Problem4.dir
 C:/Users/DELL/Documents/GitHub/Data-Structures-Project-1/Problem 4/cmake-build-debug/CMakeFiles/SortingSystem.cpp.dir
 C:/Users/DELL/Documents/GitHub/Data-Structures-Project-1/Problem 4/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/DELL/Documents/GitHub/Data-Structures-Project-1/Problem 4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 =======
+=======
+>>>>>>> Stashed changes
 D:/FCAI/2nd Year/2nd Semester/Data Structures/Assign 1 - Repo/Data-Structures-Project-1/Problem 4/cmake-build-debug/CMakeFiles/Problem4.dir
 D:/FCAI/2nd Year/2nd Semester/Data Structures/Assign 1 - Repo/Data-Structures-Project-1/Problem 4/cmake-build-debug/CMakeFiles/SortingSystem.cpp.dir
 D:/FCAI/2nd Year/2nd Semester/Data Structures/Assign 1 - Repo/Data-Structures-Project-1/Problem 4/cmake-build-debug/CMakeFiles/edit_cache.dir
 D:/FCAI/2nd Year/2nd Semester/Data Structures/Assign 1 - Repo/Data-Structures-Project-1/Problem 4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

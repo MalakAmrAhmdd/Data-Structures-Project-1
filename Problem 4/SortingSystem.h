@@ -267,7 +267,10 @@ void SortingSystem<T>::countSort() {
     }
     cout << "\nSorted Data: "; displayData();
     cout<<"\n";
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 }
 
 template<typename T>
@@ -444,13 +447,13 @@ void SortingSystem<T>::showMenu() {
             measureSortTime(&SortingSystem<T>::bubblesort);
             cout << '\n';
             break;
-             case 4:
-                 cout << "Sorting using Shell Sort...\n";
-                 cout << "Initial Data: "; displayData();
-                 cout << '\n';
-                 measureSortTime(&SortingSystem<T>::shellSort);
-                 cout << '\n';
-                 break;
+        case 4:
+            cout << "Sorting using Shell Sort...\n";
+            cout << "Initial Data: "; displayData();
+            cout << '\n';
+            measureSortTime(&SortingSystem<T>::shellSort);
+            cout << '\n';
+            break;
         case 5:
             cout << "Sorting using Merge Sort...\n";
             cout << "Initial Data: "; displayData();
