@@ -320,7 +320,6 @@ void SortingSystem<T>::radixSort() {
 }
 
 
-
 template<typename T>
 void SortingSystem<T>::bucketSort() {
     if (size <= 0) return;
@@ -340,25 +339,30 @@ void SortingSystem<T>::bucketSort() {
     }
 
     for (int i = 0; i < size; i++) {
-        int bucketIndex;
-        if constexpr (is_same<T, string>::value) {
-            bucketIndex = (data[i].length() * bucketCount) / (maxValue.length() + 1);
-        } else {
-            bucketIndex = (data[i] * bucketCount) / (maxValue + 1);
-        }
+        int bucketIndex = static_cast<int>(data[i] * bucketCount / (maxValue + 1));
         buckets[bucketIndex][bucketSizes[bucketIndex]++] = data[i];
     }
 
+    cout << "Buckets after distribution:\n";
     for (int i = 0; i < bucketCount; i++) {
-        for (int j = 0; j < bucketSizes[i] - 1; j++) {
-            for (int k = 0; k < bucketSizes[i] - j - 1; k++) {
-                if (buckets[i][k] > buckets[i][k + 1]) {
-                    T temp = buckets[i][k];
-                    buckets[i][k] = buckets[i][k + 1];
-                    buckets[i][k + 1] = temp;
-                }
-            }
+        cout << "Bucket " << i << ": ";
+        for (int j = 0; j < bucketSizes[i]; j++) {
+            cout << buckets[i][j] << " ";
         }
+        cout << endl;
+    }
+
+    for (int i = 0; i < bucketCount; i++) {
+        insertionSort(buckets[i], bucketSizes[i]);
+    }
+
+    cout << "Buckets after sorting:\n";
+    for (int i = 0; i < bucketCount; i++) {
+        cout << "Bucket " << i << ": ";
+        for (int j = 0; j < bucketSizes[i]; j++) {
+            cout << buckets[i][j] << " ";
+        }
+        cout << endl;
     }
 
     int index = 0;
@@ -373,6 +377,8 @@ void SortingSystem<T>::bucketSort() {
 
     cout << "\nSorted Data: "; displayData();
 }
+
+
 
 template<typename T>
 void SortingSystem<T>::showMenu() {
