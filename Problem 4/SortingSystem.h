@@ -218,6 +218,40 @@ void SortingSystem<T>::quickSortHelper() {
     cout<<"\n";
 }
 
+template <typename T>
+void SortingSystem<T>::countSort() {
+    int countSize = -1;
+    for (int i = 0; i < size; i++) {
+        countSize = max(countSize, data[i]);
+    }
+    countSize++;
+    int countArr[countSize];
+
+    for (int i = 0; i < countSize; i++) {
+        countArr[i] = 0;
+    }
+
+    for (int i = 0; i < size; i++) {
+        countArr[data[i]]++;
+    }
+
+    for (int i = 1; i < countSize; i++) {
+        countArr[i] += countArr[i - 1];
+    }
+
+    int newData[size];
+    for (int j = size - 1; j >= 0; j--) {
+        newData[countArr[data[j]] - 1] = data[j];
+        countArr[data[j]]--;
+    }
+
+    for (int i = 0; i < size; i++) {
+        data[i] = newData[i];
+    }
+    cout << "\nSorted Data: "; displayData();
+    cout<<"\n";
+}
+
 template<typename T>
 void SortingSystem<T>::displayData() {
     cout << '[';
@@ -397,27 +431,27 @@ void SortingSystem<T>::showMenu() {
              measureSortTime(&SortingSystem<T>::quickSortHelper);
              cout << '\n';
              break;
-            // case 7:
-            //     cout << "Sorting using Count Sort...\n";
-            //     cout << "Initial Data: "; displayData();
-            //     cout << '\n';
-            //     measureSortTime(&SortingSystem<T>::countSort);
-            //     cout << '\n';
-            //     break;
-        case 8:
-            cout << "Sorting using Radix Sort...\n";
-            cout << "Initial Data: "; displayData();
-            cout << '\n';
-            measureSortTime(&SortingSystem<T>::radixSort);
-            cout << '\n';
-            break;
-           case 9:
-                cout << "Sorting using Bucket Sort...\n";
-                cout << "Initial Data: "; displayData();
-                cout << '\n';
-                measureSortTime(&SortingSystem<T>::bucketSort);
-                cout << '\n';
-                break;
+         case 7:
+             cout << "Sorting using Count Sort...\n";
+             cout << "Initial Data: "; displayData();
+             cout << '\n';
+             measureSortTime(&SortingSystem<T>::countSort);
+             cout << '\n';
+             break;
+//        case 8:
+//            cout << "Sorting using Radix Sort...\n";
+//            cout << "Initial Data: "; displayData();
+//            cout << '\n';
+//            measureSortTime(&SortingSystem<T>::radixSort);
+//            cout << '\n';
+//            break;
+//           case 9:
+//                cout << "Sorting using Bucket Sort...\n";
+//                cout << "Initial Data: "; displayData();
+//                cout << '\n';
+//                measureSortTime(&SortingSystem<T>::bucketSort);
+//                cout << '\n';
+//                break;
         default:
             break;
     }
