@@ -267,10 +267,6 @@ void SortingSystem<T>::countSort() {
     }
     cout << "\nSorted Data: "; displayData();
     cout<<"\n";
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 }
 
 template<typename T>
