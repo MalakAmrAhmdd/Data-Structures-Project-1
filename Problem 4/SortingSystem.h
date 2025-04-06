@@ -32,6 +32,7 @@ public:
     void quickSortHelper();
 
     void displayData();
+    void displayArr(int arr[], int sz);
 
     void measureSortTime(void (SortingSystem::*sortFunc)());
 
@@ -226,23 +227,39 @@ void SortingSystem<T>::countSort() {
     }
     countSize++;
     int countArr[countSize];
+    int newData[size];
 
     for (int i = 0; i < countSize; i++) {
         countArr[i] = 0;
     }
+    for (int i = 0; i < size; i++) {
+        newData[i] = 0;
+    }
 
+    cout << "\n-- Computing frequency of each element --\n";
     for (int i = 0; i < size; i++) {
         countArr[data[i]]++;
+        cout << "Count Array: ";
+        displayArr(countArr, countSize);
     }
 
+    cout << "\n-- Computing cumulative sum --\n";
     for (int i = 1; i < countSize; i++) {
         countArr[i] += countArr[i - 1];
+        cout << "Count Array: ";
+        displayArr(countArr, countSize);
     }
 
-    int newData[size];
+    cout << "\n-- Inserting data in the right order --\n";
+    int counter = 0;
     for (int j = size - 1; j >= 0; j--) {
         newData[countArr[data[j]] - 1] = data[j];
         countArr[data[j]]--;
+        cout << "Iteration " << ++counter << ": ";
+        displayArr(newData, size);
+        cout << "Count Array: ";
+        displayArr(countArr, countSize);
+        cout << "\n";
     }
 
     for (int i = 0; i < size; i++) {
@@ -250,6 +267,8 @@ void SortingSystem<T>::countSort() {
     }
     cout << "\nSorted Data: "; displayData();
     cout<<"\n";
+
+    delete[] newData;
 }
 
 template<typename T>
@@ -259,6 +278,16 @@ void SortingSystem<T>::displayData() {
         cout << data[i] << ", ";
     }
     cout << data[size-1] << ']';
+}
+
+template<typename T>
+void SortingSystem<T>::displayArr(int arr[], int sz) {
+    cout << '[';
+    for (int i = 0; i < sz - 1; i++) {
+        cout << arr[i] << ", ";
+    }
+    cout << arr[sz - 1] << ']';
+    cout << "\n";
 }
 
 template<typename T>
