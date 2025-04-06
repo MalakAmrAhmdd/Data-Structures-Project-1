@@ -1,5 +1,6 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 "C:\Program Files\JetBrains\CLion 2024.1.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S "C:\Users\DELL\Documents\GitHub\Data-Structures-Project-1\Problem 4" -B "C:\Users\DELL\Documents\GitHub\Data-Structures-Project-1\Problem 4\cmake-build-debug"
 CMake Deprecation Warning:
   Support for "Extra Generators" like
@@ -31,10 +32,19 @@ CMake Deprecation Warning:
 -- Detecting C compiler ABI info - done
 -- Check for working C compiler: C:/msys64/mingw64/bin/cc.exe - skipped
 >>>>>>> Stashed changes
+=======
+"C:\Program Files\JetBrains\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.1.1/bin/ninja/win/x64/ninja.exe" -G Ninja -S "D:\FCAI\2nd Year\2nd Semester\Data Structures\Assign 1 - Repo\Data-Structures-Project-1\Problem 4" -B "D:\FCAI\2nd Year\2nd Semester\Data Structures\Assign 1 - Repo\Data-Structures-Project-1\Problem 4\cmake-build-debug"
+-- The C compiler identification is GNU 14.1.0
+-- The CXX compiler identification is GNU 14.1.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/msys64/mingw64/bin/cc.exe - skipped
+>>>>>>> Stashed changes
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 -- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2024.1.4/bin/mingw/bin/g++.exe - skipped
@@ -43,6 +53,14 @@ CMake Deprecation Warning:
 -- Configuring done (3.9s)
 -- Generating done (0.0s)
 -- Build files have been written to: C:/Users/DELL/Documents/GitHub/Data-Structures-Project-1/Problem 4/cmake-build-debug
+=======
+-- Check for working CXX compiler: C:/msys64/mingw64/bin/c++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (2.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: D:/FCAI/2nd Year/2nd Semester/Data Structures/Assign 1 - Repo/Data-Structures-Project-1/Problem 4/cmake-build-debug
+>>>>>>> Stashed changes
 =======
 -- Check for working CXX compiler: C:/msys64/mingw64/bin/c++.exe - skipped
 -- Detecting CXX compile features

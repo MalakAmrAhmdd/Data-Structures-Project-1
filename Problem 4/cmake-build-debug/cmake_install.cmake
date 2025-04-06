@@ -1,12 +1,4 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-# Install script for directory: C:/Users/DELL/Documents/GitHub/Data-Structures-Project-1/Problem 4
-=======
 # Install script for directory: D:/FCAI/2nd Year/2nd Semester/Data Structures/Assign 1 - Repo/Data-Structures-Project-1/Problem 4
->>>>>>> Stashed changes
-=======
-# Install script for directory: D:/FCAI/2nd Year/2nd Semester/Data Structures/Assign 1 - Repo/Data-Structures-Project-1/Problem 4
->>>>>>> Stashed changes
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,17 +32,9 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
+# Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  set(CMAKE_OBJDUMP "C:/Program Files/JetBrains/CLion 2024.1.4/bin/mingw/bin/objdump.exe")
-=======
   set(CMAKE_OBJDUMP "C:/msys64/mingw64/bin/objdump.exe")
->>>>>>> Stashed changes
-=======
-  set(CMAKE_OBJDUMP "C:/msys64/mingw64/bin/objdump.exe")
->>>>>>> Stashed changes
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -59,15 +43,9 @@ else()
   set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 endif()
 
-string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-file(WRITE "C:/Users/DELL/Documents/GitHub/Data-Structures-Project-1/Problem 4/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
-=======
 file(WRITE "D:/FCAI/2nd Year/2nd Semester/Data Structures/Assign 1 - Repo/Data-Structures-Project-1/Problem 4/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
->>>>>>> Stashed changes
-=======
-file(WRITE "D:/FCAI/2nd Year/2nd Semester/Data Structures/Assign 1 - Repo/Data-Structures-Project-1/Problem 4/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
->>>>>>> Stashed changes
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
+endif()
