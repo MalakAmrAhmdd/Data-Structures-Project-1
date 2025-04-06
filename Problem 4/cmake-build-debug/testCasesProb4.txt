@@ -1,0 +1,12 @@
+5
+int
+44 25 90 14 73
+5
+string
+ahmed omar maged rashed
+5
+double
+1.5 2.5 3.5 4.5 5.5
+5
+string
+b d e a c
