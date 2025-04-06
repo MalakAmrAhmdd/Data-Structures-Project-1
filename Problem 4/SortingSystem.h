@@ -366,7 +366,12 @@ void SortingSystem<T>::bucketSort() {
     }
 
     for (int i = 0; i < size; i++) {
-        int bucketIndex = static_cast<int>(data[i] * bucketCount / (maxValue + 1));
+        int bucketIndex;
+        if constexpr (is_same<T, string>::value) {
+            bucketIndex = (data[i].length() * bucketCount) / (maxValue.length() + 1);
+        } else {
+            bucketIndex = static_cast<int>(static_cast<double>(data[i]) * bucketCount / (maxValue + 1));
+        }
         buckets[bucketIndex][bucketSizes[bucketIndex]++] = data[i];
     }
 
@@ -380,7 +385,14 @@ void SortingSystem<T>::bucketSort() {
     }
 
     for (int i = 0; i < bucketCount; i++) {
-        insertionSort();
+        SortingSystem<T> bucket(bucketSizes[i]);
+        for (int j = 0; j < bucketSizes[i]; j++) {
+            bucket[j] = buckets[i][j];
+        }
+        bucket.insertionSort();
+        for (int j = 0; j < bucketSizes[i]; j++) {
+            buckets[i][j] = bucket[j];
+        }
     }
 
     cout << "Buckets after sorting:\n";
@@ -404,7 +416,6 @@ void SortingSystem<T>::bucketSort() {
 
     cout << "\nSorted Data: "; displayData();
 }
-
 
 
 template<typename T>
