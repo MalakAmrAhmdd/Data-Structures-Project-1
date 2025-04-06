@@ -1,4 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" -S "C:\DR Beshir\Data-Structures-Project-1\Problem 5" -B "C:\DR Beshir\Data-Structures-Project-1\Problem 5\cmake-build-debug"
--- Configuring done (0.2s)
--- Generating done (0.1s)
--- Build files have been written to: C:/DR Beshir/Data-Structures-Project-1/Problem 5/cmake-build-debug

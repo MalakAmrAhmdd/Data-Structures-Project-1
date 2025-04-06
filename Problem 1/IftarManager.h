@@ -24,11 +24,10 @@ public:
     void remove_guest(string name);
     void display_all_guests();
     void update_guest_invitation(string name, string new_date);
-//    void send_email(string mail, string date);
     void send_reminder(string date);
     void send_email(string name, string contact, string date);
+    void sort_guest_list();
 
-//    void sort_guest_list();
 };
 
 

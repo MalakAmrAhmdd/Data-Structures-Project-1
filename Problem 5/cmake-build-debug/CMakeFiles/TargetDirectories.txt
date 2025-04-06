@@ -1,4 +1,0 @@
-C:/DR Beshir/Data-Structures-Project-1/Problem 5/cmake-build-debug/CMakeFiles/Problem5.dir
-C:/DR Beshir/Data-Structures-Project-1/Problem 5/cmake-build-debug/CMakeFiles/StatCalc.cpp.dir
-C:/DR Beshir/Data-Structures-Project-1/Problem 5/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/DR Beshir/Data-Structures-Project-1/Problem 5/cmake-build-debug/CMakeFiles/rebuild_cache.dir

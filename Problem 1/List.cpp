@@ -10,6 +10,10 @@ List::List(int len) {
     list = new Guest[this->maxSize];
 }
 
+List::~List() {
+    delete[] list;
+}
+
 Guest& List::operator=(Guest guest) {
     delete[] list;
     list = &guest;

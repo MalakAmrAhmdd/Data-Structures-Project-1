@@ -15,6 +15,7 @@ private:
 public:
     List();
     List(int size);
+    ~List();
 
     Guest& operator= (Guest guest);
     Guest& operator[](int index);

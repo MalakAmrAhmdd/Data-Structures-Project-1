@@ -1,4 +1,11 @@
 # ninja log v5
-15	1283	7637874830154172	CMakeFiles/Data-Structures-Project-1.dir/SortingSystem.cpp.obj	7f8353aa1402ab92
-11	3488	7637874852201246	CMakeFiles/Data-Structures-Project-1.dir/main.cpp.obj	d549375147f40b13
 3489	3748	7637874854576076	Data-Structures-Project-1.exe	2db56530f7355889
+6	1234	7656755096593653	CMakeFiles/Problem4.dir/SortingSystem.cpp.obj	f694bd3fa1ed81f8
+5	3164	7656755518486048	CMakeFiles/Problem4.dir/main.cpp.obj	640b1eb11856f9df
+3165	3331	7656755520201739	Problem4.exe	4ecf26b5397054ce
+9	1145	7656756204439405	CMakeFiles/Problem4.dir/SortingSystem.cpp.obj	f694bd3fa1ed81f8
+5	3131	7656756224188560	CMakeFiles/Problem4.dir/main.cpp.obj	640b1eb11856f9df
+3131	3283	7656756225742642	Problem4.exe	4ecf26b5397054ce
+9	1144	7656756703239968	CMakeFiles/Problem4.dir/SortingSystem.cpp.obj	f694bd3fa1ed81f8
+5	3202	7656756723715070	CMakeFiles/Problem4.dir/main.cpp.obj	640b1eb11856f9df
+3202	3358	7656756725287886	Problem4.exe	4ecf26b5397054ce

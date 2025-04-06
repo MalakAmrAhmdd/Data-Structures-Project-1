@@ -42,18 +42,17 @@ void IftarManager::update_guest_invitation(string name, string new_date) {
 
 
 // Callback function to capture the response
-static size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* s) {
+static size_t WriteCallback(void* contents, size_t size, size_t nmemb, string* s) {
     size_t newLength = size * nmemb;
     try {
         s->append((char*)contents, newLength);
     } catch (std::bad_alloc& e) {
-        // Handle memory allocation exceptions
         return 0;
     }
     return newLength;
 }
 
-void IftarManager::send_email(std::string name, std::string contact, std::string date) {
+void IftarManager::send_email(string name, string contact, string date) {
     CURL *curl;
     CURLcode res;
     long http_code = 0;
@@ -74,7 +73,6 @@ void IftarManager::send_email(std::string name, std::string contact, std::string
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
 
-        // Capture the response
         string response_string;
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response_string);
@@ -85,10 +83,10 @@ void IftarManager::send_email(std::string name, std::string contact, std::string
         } else {
             curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
             if (http_code == 200) {
-                std::cout << "Email sent successfully to: " << contact << std::endl;
+                cout << "Email sent successfully to: " << contact << std::endl;
             } else {
-                std::cout << "Failed to send email. HTTP response code: " << http_code << std::endl;
-                std::cout << "Response from Mailjet: " << response_string << std::endl;
+                cout << "Failed to send email. HTTP response code: " << http_code << std::endl;
+                cout << "Response from Mailjet: " << response_string << std::endl;
             }
         }
 
@@ -106,6 +104,18 @@ void IftarManager::send_reminder(string date) {
             guest_list[i].display_guest();
             send_email(guest_list[i].getName(), guest_list[i].getContact(), guest_list[i].getDate());
         }
+    }
+}
+
+void IftarManager::sort_guest_list() {
+    // Using insertion sort
+    for (int i = 1; i < guest_list.size(); i++) {
+        int j;
+        Guest tmp = guest_list[i];
+        for (j = i; j > 0 && tmp.getDate() < guest_list[j-1].getDate(); j--) {
+            guest_list[j] = guest_list[j - 1];
+        }
+        guest_list[j] = tmp;
     }
 }
 
