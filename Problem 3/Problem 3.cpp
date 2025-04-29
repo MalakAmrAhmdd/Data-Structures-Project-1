@@ -1,52 +1,8 @@
 #include <bits/stdc++.h>
+#include<SLL.h>
 using namespace std;
 
-class Node {
-public:
-    int data;
-    Node* next;
-    Node(int value) : data(value), next(nullptr) {}
-};
 
-class SortedLinkedList {
-private:
-    Node* head;
-public:
-    SortedLinkedList() : head(nullptr) {}
-
-    void insert(int value) {
-        Node* newNode = new Node(value);
-        if (!head || head->data >= value) {
-            newNode->next = head;
-            head = newNode;
-        } else {
-            Node* current = head;
-            while (current->next && current->next->data < value) {
-                current = current->next;
-            }
-            newNode->next = current->next;
-            current->next = newNode;
-        }
-    }
-
-    friend ostream& operator<<(ostream& os, const SortedLinkedList& list) {
-        Node* current = list.head;
-        while (current) {
-            os << current->data << " ";
-            current = current->next;
-        }
-        return os;
-    }
-
-    ~SortedLinkedList() {
-        Node* current = head;
-        while (current) {
-            Node* next = current->next;
-            delete current;
-            current = next;
-        }
-    }
-};
 
 int main() {
     SortedLinkedList list;
