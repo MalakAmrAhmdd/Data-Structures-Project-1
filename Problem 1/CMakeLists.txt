@@ -7,7 +7,6 @@ include_directories(.)
 find_package(CURL REQUIRED)
 include_directories(${CURL_INCLUDE_DIRS})
 
-add_executable(Problem_1
-        main.cpp)
+add_executable(Problem_1 Problem1.cpp)
 
 target_link_libraries(Problem_1 ${CURL_LIBRARIES})
